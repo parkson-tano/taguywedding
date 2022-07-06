@@ -22,11 +22,11 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Hello, world!</title>
+    <title>Taguy Wedding</title>
   </head>
   <body>
     <div class="container">
-      <h2>Filterable Table</h2>
+      <h2>Wedding Invitees</h2>
       <p>
         Type invitees names in the input field below. The table will be filtered
       </p>
@@ -37,42 +37,42 @@
         placeholder="Search.."
       />
       <br />
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Table</th>
-            <th>Arrived</th>
-          </tr>
-        </thead>
-        <tbody id="myTable">
-          {% for invite in invites %}
-          <tr>
-            <td>{{invite.name}}</td>
-            <td>{{invite.table}}</td>
-            <td>
-              {% if invite.arrived %}
-              <span class="glyphicon glyphicon-ok"></span>
-              {% endif %}
-            </td>
-            <td>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked"
-                  checked
-                />
-                <label class="form-check-label" for="flexCheckChecked">
-                  Checked checkbox
-                </label>
-              </div>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <div class="table-responsive-sm">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Table</th>
+              <th>Arrived</th>
+            </tr>
+          </thead>
+          <tbody id="myTable">
+            {% for invite in invites %}
+            <tr>
+              <td>{{invite.name}}</td>
+              <td>{{invite.table}}</td>
+              <td>
+                {% if invite.arrived %}
+                <span class="glyphicon glyphicon-ok"></span>
+                {% endif %}
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckChecked"
+                    name = 'arrived'
+                  />
+                  </label>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
 
       <p>Welcome</p>
     </div>
