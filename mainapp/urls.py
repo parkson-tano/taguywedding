@@ -4,5 +4,5 @@ from .views import *
 
 app_name = 'taguy'
 urlpatterns = [
-    path('', IndexView.as_view(), name='index'),
+    path('', index, name='index'),
 ]
